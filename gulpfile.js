@@ -14,9 +14,9 @@ var dir = {
 }
 
 gulp.task('style', function() {
-  return gulp.src(`${dir.src}/style.css`)
+  return gulp.src(`${dir.src}/styles/style.css`)
     .pipe(cleanCSS({ compatibility: 'ie11' }))
-    .pipe(gulp.dest(dir.temp))
+    .pipe(gulp.dest(`${dir.temp}/styles`));
 });
 
 gulp.task('images', function() {
@@ -42,7 +42,7 @@ gulp.task('revreplace', ['revision'], function(){
 });
 
 gulp.task('clean-dist', function() {
-  return del(`${dir.dist}/style-*.css`).then(function(paths) {
+  return del(`${dir.dist}/styles`).then(function(paths) {
     console.log('Files and folders that are deleted:\n', paths.join('\n'));
   });
 });
