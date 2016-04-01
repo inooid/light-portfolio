@@ -94,6 +94,15 @@ header section > * {
   position: absolute;
 }
 
+.decoration .decoration-left-orange {
+  left: 75px;
+  right: -75px;
+  width: 420px;
+  height: 128px;
+  background: #f5a623;
+  transform: rotate(24deg);
+}
+
 .decoration .decoration-right-orange {
   bottom: -75px;
   right: -75px;
