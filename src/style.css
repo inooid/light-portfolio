@@ -47,6 +47,78 @@ table {
   border-spacing: 0;
 }
 
+/* End of reset.css */
+@keyframes photoAnimationIn {
+  0% {
+    transform: translateX(128px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(128px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes nameAnimationIn {
+  0%, 50% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes subtitleAnimationIn {
+  0%, 60% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes iconFirstAnimationIn {
+  0%, 40% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes iconSecondAnimationIn {
+  0%, 50% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes iconThirdAnimationIn {
+  0%, 60% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
 html, body {
   position: relative;
   width: 100%;
@@ -57,12 +129,14 @@ html, body {
 }
 
 h1 {
+  animation: nameAnimationIn 1s;
   font-size: 36px;
   font-weight: 500;
   color: #222222;
 }
 
 h2 {
+  animation: subtitleAnimationIn 1s;
   font-size: 18px;
   color: #777777;
 }
@@ -87,10 +161,15 @@ header {
 }
 
 header img {
+  animation: photoAnimationIn 1s;
   margin-right: 20px;
 }
 
-header section > * {
+header section {
+  margin-top: 5px;
+}
+
+header section h1, header section h2 {
   line-height: 36px;
 }
 
@@ -107,6 +186,18 @@ header section > * {
   transition: transform 200ms;
   width: 18px;
   height: 18px;
+}
+
+.links a:nth-child(1) .links__icon {
+  animation: iconFirstAnimationIn 1.6s;
+}
+
+.links a:nth-child(2) .links__icon {
+  animation: iconSecondAnimationIn 1.6s;
+}
+
+.links a:nth-child(3) .links__icon {
+  animation: iconThirdAnimationIn 1.6s;
 }
 
 .decoration > * {
