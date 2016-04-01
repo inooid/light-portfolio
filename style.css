@@ -67,6 +67,10 @@ h2 {
   color: #777777;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container, header {
   display: flex;
   justify-content: center;
@@ -88,6 +92,21 @@ header img {
 
 header section > * {
   line-height: 36px;
+}
+
+.links a {
+  padding: 15px;
+  margin-left: -15px;
+}
+
+.links a:hover .links__icon {
+  transform: scale(1.1);
+}
+
+.links .links__icon {
+  transition: transform 200ms;
+  width: 18px;
+  height: 18px;
 }
 
 .decoration > * {
