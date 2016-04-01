@@ -22,10 +22,15 @@ gulp.task('style', function() {
 gulp.task('images', function() {
   return gulp.src(`${dir.src}/images/*`)
     .pipe(cache(imagemin()))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest(`${dir.dist}/images`));
 });
 
-gulp.task('revision', ['clean-dist', 'style', 'images'], function() {
+gulp.task('add-favicon', function() {
+  return gulp.src(`${dir.src}/favicon.ico`)
+    .pipe(gulp.dest(dir.dist))
+});
+
+gulp.task('revision', ['clean-dist', 'add-favicon', 'style', 'images'], function() {
   return gulp.src([`${dir.temp}/**/*.css`, `${dir.temp}/**/*.js`])
     .pipe(rev())
     .pipe(gulp.dest(dir.dist))
