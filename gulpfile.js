@@ -54,3 +54,5 @@ gulp.task('clean', function() {
 gulp.task('build', ['revreplace'], function() {
   gulp.start('clean');
 });
+
+gulp.task('default', ['build']);
